@@ -1,6 +1,11 @@
+import { goTo } from "@/router/router";
+
 class ButtonEl extends HTMLElement {
-  constructor(text: string) {
+  route: string;
+
+  constructor() {
     super();
+    this.route = this.getAttribute("to")!;
     this.attachShadow({ mode: "open" });
   }
 
@@ -30,6 +35,11 @@ class ButtonEl extends HTMLElement {
       <slot></slot>
     </button>
     `;
+
+    this.shadowRoot!.addEventListener("click", () => {
+      console.log(this.route);
+      goTo(this.route);
+    });
   }
 }
 

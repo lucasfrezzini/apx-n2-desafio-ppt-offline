@@ -9,7 +9,7 @@ export function initHome() {
       Piedra<br/> Papel <span>ó</span><br/> Tijera
     </h1>
   </header>
-  <button-el>Empezar</button-el>
+  <button-el to="/rules">Empezar</button-el>
   <bottom-hands></bottom-hands>
   `;
 

@@ -9,7 +9,7 @@ export function initRules() {
       El mejor de 3 gana.
     </h2>
   </header>
-  <button-el>¡Jugar!</button-el>
+  <button-el to="/choice">¡Jugar!</button-el>
   <bottom-hands></bottom-hands>
   `;
 
