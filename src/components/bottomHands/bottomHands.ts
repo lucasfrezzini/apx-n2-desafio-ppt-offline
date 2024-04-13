@@ -1,3 +1,11 @@
+import { goTo } from "@/router/router";
+import { state } from "@/state/state";
+
+function handleChoice(choice: string) {
+  state.addChoice(choice);
+  goTo("/game");
+}
+
 class BottomHands extends HTMLElement {
   constructor() {
     super();
@@ -62,11 +70,31 @@ class BottomHands extends HTMLElement {
     // Logic
     this.shadowRoot!.innerHTML += `
     <div class="bottom-hands">
-      <img src="/piedra.svg" alt="Icono Piedra">
-      <img src="/papel.svg" alt="Icono Papel">
-      <img src="/tijera.svg" alt="Icono Tijera">
+      <img src="/piedra.svg" data-type="stone" alt="Icono Piedra">
+      <img src="/papel.svg" data-type="paper" alt="Icono Papel">
+      <img src="/tijera.svg" data-type="scissor" alt="Icono Tijera">
     </div>
     `;
+
+    if (this.hasAttribute("is-big")) {
+      //? Stone Listener
+      const stone = this.shadowRoot!.querySelector('[data-type="stone"]')!;
+      stone.addEventListener("click", function () {
+        handleChoice("piedra");
+      });
+
+      //? Paper Listener
+      const paper = this.shadowRoot!.querySelector('[data-type="paper"]')!;
+      paper.addEventListener("click", function () {
+        handleChoice("papel");
+      });
+
+      //? Scissor Listener
+      const scissor = this.shadowRoot!.querySelector('[data-type="scissor"]')!;
+      scissor.addEventListener("click", function () {
+        handleChoice("tijera");
+      });
+    }
   }
 }
 

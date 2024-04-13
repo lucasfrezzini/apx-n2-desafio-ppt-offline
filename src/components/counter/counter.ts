@@ -31,7 +31,7 @@ class Counter extends HTMLElement {
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 100 100" xml:space="preserve">
           <circle fill="none" stroke="#000" stroke-width="7" cx="50" cy="50" r="35" stroke-dasharray="360" stroke-linecap="round" transform="rotate(-90 ) translate(-100 0)" >
-              <animate attributeName="stroke-dashoffset" values="360;0" dur="5s" repeatCount="indefinite"></animate>
+              <animate attributeName="stroke-dashoffset" values="360;0" dur="5s"></animate>
           </circle>
           <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle">3</text>
       </svg>

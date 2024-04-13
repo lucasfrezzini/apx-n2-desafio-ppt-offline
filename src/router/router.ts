@@ -1,5 +1,5 @@
 import { initChoice } from "@/pages/Choice";
-import { initGame } from "@/pages/Game";
+import { runGameOptions } from "@/pages/Game";
 import { initHome } from "@/pages/Home";
 import { initResult } from "@/pages/Result";
 import { initRules } from "@/pages/Rules";
@@ -25,7 +25,7 @@ const routes: Route[] = [
   },
   {
     path: "/game",
-    render: initGame,
+    render: runGameOptions,
   },
   {
     path: "/result",

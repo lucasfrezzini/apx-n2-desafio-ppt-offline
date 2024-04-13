@@ -1,4 +1,5 @@
 import { goTo } from "@/router/router";
+import { state } from "@/state/state";
 
 class ButtonEl extends HTMLElement {
   route: string;
@@ -37,7 +38,10 @@ class ButtonEl extends HTMLElement {
     `;
 
     this.shadowRoot!.addEventListener("click", () => {
-      console.log(this.route);
+      if (this.hasAttribute("reset")) {
+        state.resetGame();
+        console.log("Reseteo hecho");
+      }
       goTo(this.route);
     });
   }

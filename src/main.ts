@@ -3,8 +3,8 @@ import { handleRoute } from "./router/router";
 import "@components/button/button";
 import "@components/bottomHands/bottomHands";
 import "@components/counter/counter";
-// import "@pages/Home";
-// import "@pages/Rules";
+import "@pages/Home";
+import "@pages/Rules";
 import "@pages/Game";
 import "@pages/Result";
 

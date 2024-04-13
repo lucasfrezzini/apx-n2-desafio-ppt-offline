@@ -71,18 +71,52 @@ section.choice bottom-hands {
   width: 100%;
 }
 
+p.hidden {
+  display: none;
+}
+p.alert {
+  color: #1c1c1c;
+  font-size: 42px;
+}
+
 section.game {
   position: relative;
   overflow-y: hidden;
 }
 
 .hand {
-  height: 350px;
-  transform: translateY(15px);
+  height: 250px;
+}
+
+.hand-player {
+  animation: 0.5s linear 0s forwards normal hand-move-up;
 }
 
 .hand-machine {
-  transform: rotate(180deg) translateY(15px);
+  animation: 0.5s linear 0s forwards normal hand-move-down;
+}
+
+@keyframes hand-move-up {
+  from {
+    /* pushes the sun down past the viewport */
+    transform: translateY(60px);
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: translateY(10px);
+  }
+}
+
+@keyframes hand-move-down {
+  from {
+    /* pushes the sun down past the viewport */
+
+    transform: rotate(180deg) translateY(60px);
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: rotate(180deg) translateY(10px);
+  }
 }
 
 .lifes {
