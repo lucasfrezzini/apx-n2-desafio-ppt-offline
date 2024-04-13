@@ -1,4 +1,3 @@
-import { goTo } from "@/router/router";
 export function initHome() {
   const home = document.createElement("section");
   home.classList.add("home");
